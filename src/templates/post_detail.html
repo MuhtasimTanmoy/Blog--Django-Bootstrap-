@@ -1,0 +1,15 @@
+{%extends "index.html" %}
+{%block head%}{{instance.title}}|{{block.super}}{%endblock head%}
+
+{%block content%}
+<div class='col-sm-6 col-sm-offset-3'>
+    <h1>
+      {{title}} <small>  {{instance.timestamp}}</small><br>
+    </h1>
+          {{instance.content}}<br>
+        
+
+
+
+  </div>
+{% endblock content%}
