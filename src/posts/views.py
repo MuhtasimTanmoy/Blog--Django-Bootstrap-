@@ -45,9 +45,9 @@ def post_create(request):
     }
     return render(request,"post_form.html",context)
 
-def post_update(request,id=None):
+def post_update(request,slug=None):
 
-    instance=get_object_or_404(Post,id=id )
+    instance=get_object_or_404(Post,slug=slug )
 
     form=PostForm(request.POST or None,request.FILES or None,instance=instance)
     if form.is_valid():
@@ -65,9 +65,9 @@ def post_update(request,id=None):
 
     return render(request,"post_form.html",context)
 
-def post_retrieve(request,id):
+def post_retrieve(request,slug):
 
-    instance=get_object_or_404(Post,id=id)
+    instance=get_object_or_404(Post,slug=slug)
     context={
     "title":instance.title,
     "instance":instance
@@ -75,7 +75,7 @@ def post_retrieve(request,id):
     return render(request,"post_detail.html",context)
 
 
-def post_delete(request,id):
+def post_delete(request,slug):
     instance=get_object_or_404(Post,id=id)
     instance.delete()
 
