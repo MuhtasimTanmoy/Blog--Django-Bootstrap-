@@ -1,4 +1,4 @@
-{%extends "index.html" %}
+ {%extends "index.html" %}
 {% load urlify %}
 {%block head%}{{instance.title}}|{{block.super}}{%endblock head%}
 
@@ -39,9 +39,9 @@ Linkedin
 <a href="http://www.reddit.com/submit?url={{request.build_absolute_uri}}&title={{share_string}}">Reddit</a>
 </p> -->
 <div class="row">
-  <div class="col-sm-12"
+  <div class="col-sm-12">
 
-  {{instance.content|linebreaks}}<br>
+  <div class=" content-markdown">{{instance.content|safe}}<br></div>
 
   <hr/>
   <br/>

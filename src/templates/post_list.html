@@ -26,7 +26,7 @@
            {%if obj.draft %} <small style="color:red">Draft</small>{%endif %}
          {%  if obj.publish > today %}<small style="color:blue">Future</small>{%endif%}</h3>
         <p>author:{{obj.user}}</p>
-        <p>{{obj.content|linebreaks|truncatechars:120}}</p>
+        <p class="content-markdown">{{obj.content}}</p>
         <p><a href="{{obj.get_absolute_url}}" class="btn btn-primary" role="button">View</a> </p>
       </div>
     </div>
